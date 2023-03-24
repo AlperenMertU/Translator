@@ -9,6 +9,10 @@
   --border-bottom-color:rgba(0, 0, 0, 0.108) ;
 }
 
+.text {
+  display: flex;
+}
+
 nav {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -32,21 +36,22 @@ nav .rightSide {
   gap: 10px;
   padding: 20px 0 0 50px;
   padding: 20px;
+  border-bottom: 1px solid var(--border-bottom-color);
 }
-.header .elementZ .text {
+.header .elementZ .text-title {
   background-color: rgba(21, 63, 252, 0.625);
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
 }
-.header .elementZ .images {
+.header .elementZ .text-images {
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
 }
-.header .elementZ .documents {
+.header .elementZ .text-documents {
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
 }
-.header .elementZ .websites {
+.header .elementZ .text-websites {
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
 }
@@ -56,8 +61,6 @@ main {
   justify-content: center;
 }
 main .contain {
-  position: a;
-  z-index: 999;
   margin-bottom: 220px;
   border: 2px solid rgba(0, 0, 0, 0.122);
   border-radius: 9px;
@@ -70,10 +73,10 @@ main .contain {
 main .contain .section .lang {
   border-bottom: 1px solid rgba(0, 0, 0, 0.115);
 }
-main .contain .section .text {
+main .contain .section .textA {
   padding-left: 25px;
 }
-main .contain .section .text textarea {
+main .contain .section .textA textarea {
   border: 0;
   outline: 0;
   width: 518px;
@@ -82,10 +85,10 @@ main .contain .section .text textarea {
   font-size: 24px;
   overflow: hidden;
 }
-main .contain .sectionB .lang .text {
+main .contain .sectionB .lang .textB {
   padding-right: 25px;
 }
-main .contain .sectionB .lang .text textarea {
+main .contain .sectionB .lang .textB textarea {
   border: 0;
   outline: 0;
   width: 518px;

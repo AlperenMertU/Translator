@@ -10,7 +10,9 @@
 }
 
 
-
+.text{
+    display: flex;
+}
 
 nav {
     background-color: rgb(255, 255, 255);
@@ -30,6 +32,7 @@ nav {
 }
 
 .header {
+   
     .elementZ {
         display: flex;
         text-align: center;
@@ -37,34 +40,34 @@ nav {
         gap: 10px;
         padding: 20px 0 0 50px;
         padding: 20px;
+        border-bottom: 1px solid var(--border-bottom-color);
 
-        .text {
+        .text-title {
             background-color: rgba(21, 63, 252, 0.625);
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
-        .images {
+        .text-images {
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
-        .documents {
+        .text-documents {
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
-        .websites {
+        .text-websites {
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
     }
+   
 }
 
 main {
-   
     display: flex;
     justify-content: center;
+  
     .contain {
-        position: a;
-        z-index: 999;
         margin-bottom: 220px;
         border: 2px solid rgba(0, 0, 0, 0.122);
         border-radius: 9px;
@@ -79,7 +82,7 @@ main {
 
               }
               
-              .text{
+              .textA{
                 padding-left: 25px;
                 textarea{
                     border: 0;
@@ -102,7 +105,7 @@ main {
 
         .sectionB {
             .lang {
-                .text{
+                .textB{
                     padding-right: 25px;
                    
                     textarea{
