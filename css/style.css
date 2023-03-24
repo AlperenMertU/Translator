@@ -5,12 +5,16 @@
   font-family: "Roboto", arial, sans-serif;
 }
 
+:root {
+  --border-bottom-color:rgba(0, 0, 0, 0.108) ;
+}
+
 nav {
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between;
   padding: 22px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.108);
+  border-bottom: 1px solid var(--border-bottom-color);
 }
 nav .leftSide {
   display: flex;
@@ -27,8 +31,7 @@ nav .rightSide {
   justify-content: flex-start;
   gap: 10px;
   padding: 20px 0 0 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.162);
-  border-spacing: 20px;
+  padding: 20px;
 }
 .header .elementZ .text {
   background-color: rgba(21, 63, 252, 0.625);
@@ -53,18 +56,24 @@ main {
   justify-content: center;
 }
 main .contain {
+  position: a;
+  z-index: 999;
+  margin-bottom: 220px;
   border: 2px solid rgba(0, 0, 0, 0.122);
   border-radius: 9px;
   display: flex;
   justify-content: space-between;
   width: 1320px;
   height: 225px;
-  background: rgba(61, 61, 61, 0.062);
+  background: rgba(255, 255, 255, 0.062);
 }
-main .contain .section .lang .text {
+main .contain .section .lang {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.115);
+}
+main .contain .section .text {
   padding-left: 25px;
 }
-main .contain .section .lang .text textarea {
+main .contain .section .text textarea {
   border: 0;
   outline: 0;
   width: 518px;
@@ -72,9 +81,6 @@ main .contain .section .lang .text textarea {
   resize: none;
   font-size: 24px;
   overflow: hidden;
-}
-main .contain .section .lang .text .fa-keyboard {
-  right: 11px;
 }
 main .contain .sectionB .lang .text {
   padding-right: 25px;
