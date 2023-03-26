@@ -1,3 +1,36 @@
+   var alphabet = {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+      
+     
+    };
+    
+
+    function convertToGokturk(text) {
+      var gokturkText = "";
+      for (var i = 0; i < text.length; i++) {
+        var char = text[i].toLowerCase();
+        if (alphabet[char]) {
+          gokturkText += alphabet[char];
+        } else {
+          gokturkText += char;
+        }
+      }
+      return gokturkText;
+    }
+
+    function convert() {
+      var inputText = document.getElementById("textA").value;
+      var output = document.getElementById("textB");
+      output.innerHTML = convertToGokturk(inputText)
+    }
+
+
+
+
+
+/*
 var alphabetMap = {
   "a": "𐰀",
   "b": "𐰋",

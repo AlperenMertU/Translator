@@ -5,12 +5,20 @@
     font-family: "Roboto",arial,sans-serif;
 }
 
+
+  $border-bottom-color:rgba(0, 0, 0, 0.108);
+
+
+.text{
+    display: flex;
+}
+
 nav {
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     padding: 22px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.108);
+    border-bottom: 1px solid $border-bottom-color;
 
     .leftSide {
         display: flex;
@@ -23,49 +31,70 @@ nav {
 }
 
 .header {
+   
     .elementZ {
+        background-color: rgba(141, 141, 141, 0.062);
         display: flex;
         text-align: center;
         justify-content: flex-start;
         gap: 10px;
-        padding: 20px 0 0 50px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.162);
-        border-spacing: 20px;
+        padding: 40px 0 50px 80px;
+        border-bottom: 1px solid $border-bottom-color;
 
-        .text {
+        .title {
+            display: flex;
             background-color: rgba(21, 63, 252, 0.625);
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
         .images {
+            display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
         .documents {
+            display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
         .websites {
+            display: flex;
+
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
         }
     }
+   
 }
 
 main {
     display: flex;
     justify-content: center;
+  
     .contain {
+        margin-bottom: 220px;
         border: 2px solid rgba(0, 0, 0, 0.122);
         border-radius: 9px;
         display: flex;
         justify-content: space-between;
         width: 1320px;
         height: 225px;
-        background: rgba(61, 61, 61, 0.062);
+        background: rgba(255, 255, 255, 0.062);
         .section {
+
             .lang {
-              .text{
+                ul{
+                    
+                    li:nth-child(4n-3) {
+                      
+              
+                    }
+                }
+              }
+              
+              .textA{
+                border-top: 1px solid rgba(0, 0, 0, 0.115);
+
                 padding-left: 25px;
                 textarea{
                     border: 0;
@@ -77,34 +106,33 @@ main {
                    overflow: hidden;
 
                 }
-
-                .fa-keyboard{
-                  right: 11px;
-                }
-             
-              }
             }
+             
+            
+           
         }
 
 
-
         .sectionB {
-            .lang {
-                .text{
-                    padding-right: 25px;
-                   
-                    textarea{
-                        border: 0;
-                        outline: 0;
-                        width: 518px;
-                        height: 74px;
-                        resize: none;
-                      font-size: 24px;
-                      overflow: hidden;
-                    }
-                   
-                  }
+            .langB {
+             
+            
             }
+            .textB{
+                border-top: 1px solid rgba(0, 0, 0, 0.115);
+
+                padding-right: 25px;
+                textarea{
+                    border: 0;
+                    outline: 0;
+                    width: 518px;
+                    height: 74px;
+                    resize: none;
+                  font-size: 24px;
+                  overflow: hidden;
+                }
+               
+              }
         }
     }
 
