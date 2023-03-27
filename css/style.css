@@ -5,10 +5,6 @@
   font-family: "Roboto", arial, sans-serif;
 }
 
-:root {
-  --border-bottom-color:rgba(0, 0, 0, 0.108) ;
-}
-
 .text {
   display: flex;
 }
@@ -30,31 +26,39 @@ nav .rightSide {
 }
 
 .header .elementZ {
+  color: rgb(25, 103, 210);
   background-color: rgba(141, 141, 141, 0.062);
   display: flex;
   text-align: center;
   justify-content: flex-start;
   gap: 10px;
-  padding: 20px 0 0 50px;
-  padding: 20px;
-  border-bottom: 1px solid var(--border-bottom-color);
+  padding: 40px 0 50px 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.108);
 }
-.header .elementZ .text-title {
-  background-color: rgba(21, 63, 252, 0.625);
+.header .elementZ .title {
+  display: flex;
+  background-color: rgba(21, 63, 252, 0.137);
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
+  padding: 10px;
 }
-.header .elementZ .text-images {
+.header .elementZ .images {
+  display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
+  padding: 10px;
 }
-.header .elementZ .text-documents {
+.header .elementZ .documents {
+  display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
+  padding: 10px;
 }
-.header .elementZ .text-websites {
+.header .elementZ .websites {
+  display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
+  padding: 10px;
 }
 
 main {
@@ -62,21 +66,24 @@ main {
   justify-content: center;
 }
 main .contain {
+  margin-bottom: 220px;
   border: 2px solid rgba(0, 0, 0, 0.122);
   border-radius: 9px;
   display: flex;
   justify-content: space-between;
   width: 1320px;
   height: 225px;
-  background: rgba(61, 61, 61, 0.062);
+  background: rgba(255, 255, 255, 0.062);
 }
-main .contain .section .lang {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.115);
+main .contain #trans {
+  padding-top: 20px;
+  cursor: pointer;
 }
 main .contain .section .textA {
+  border-top: 1px solid rgba(0, 0, 0, 0.115);
   padding-left: 25px;
 }
-main .contain .section .lang .text textarea {
+main .contain .section .textA textarea {
   border: 0;
   outline: 0;
   width: 518px;
@@ -85,10 +92,11 @@ main .contain .section .lang .text textarea {
   font-size: 24px;
   overflow: hidden;
 }
-main .contain .sectionB .lang .textB {
+main .contain .sectionB .textB {
+  border-top: 1px solid rgba(0, 0, 0, 0.115);
   padding-right: 25px;
 }
-main .contain .sectionB .lang .textB textarea {
+main .contain .sectionB .textB textarea {
   border: 0;
   outline: 0;
   width: 518px;

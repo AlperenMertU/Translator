@@ -8,6 +8,8 @@
 
   $border-bottom-color:rgba(0, 0, 0, 0.108);
 
+ 
+
 
 .text{
     display: flex;
@@ -33,6 +35,7 @@ nav {
 .header {
    
     .elementZ {
+        color:rgb(25,103,210);
         background-color: rgba(141, 141, 141, 0.062);
         display: flex;
         text-align: center;
@@ -43,25 +46,30 @@ nav {
 
         .title {
             display: flex;
-            background-color: rgba(21, 63, 252, 0.625);
+            background-color: rgba(21, 63, 252, 0.137);
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
+            padding: 10px;
         }
         .images {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
+            padding: 10px;
+
         }
         .documents {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
+            padding: 10px;
+
         }
         .websites {
             display: flex;
-
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
+            padding: 10px;
         }
     }
    
@@ -80,15 +88,16 @@ main {
         width: 1320px;
         height: 225px;
         background: rgba(255, 255, 255, 0.062);
+        #trans{
+            padding-top: 20px;
+            cursor: pointer;
+        }
         .section {
 
             .lang {
                 ul{
                     
-                    li:nth-child(4n-3) {
-                      
-              
-                    }
+                  
                 }
               }
               
