@@ -26,14 +26,18 @@ nav .rightSide {
 }
 
 .header .elementZ {
+  cursor: pointer;
   color: rgb(25, 103, 210);
   background-color: rgba(141, 141, 141, 0.062);
   display: flex;
   text-align: center;
   justify-content: flex-start;
   gap: 10px;
-  padding: 40px 0 50px 80px;
+  padding: 22px 0 50px 80px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.108);
+}
+.header .elementZ .fa-sharp {
+  padding: 0 10px 0 5px;
 }
 .header .elementZ .title {
   display: flex;

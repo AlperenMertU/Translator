@@ -1,32 +1,62 @@
    var alphabet = {
-        "a": "1",
-        "b": "2",
-        "c": "3",
-      
-     
+    "a": "𐰀",
+    "b": "𐰉",
+    "c": "𐰲",
+    "ç": "𐰲",
+    "d": "𐰑",
+    "e": "𐰀",
+    "f": "𐰯",
+    "g": "𐰍",
+    "ğ":"𐰍",
+    "h": "𐰚",
+    "i": "𐰃",
+    "ı": "𐰃",
+    "j": "𐰖",
+    "k": "𐰚",
+    "l": "𐰞",
+    "m": "𐰢",
+    "n": "𐰣",
+    "o": "𐰆",
+    "ö": "𐰇",
+    "p": "1",
+    "r": "𐰺",
+    "s": "𐰽",
+    "ş": "𐱁",
+    "t": "𐱃",
+    "u": "𐰆",
+    "v": "𐰉",
+    "y": "𐰘",
+    "z": "𐰙"
     };
     
 
-    function convertToGokturk(text) {
-      var gokturkText = "";
-      for (var i = 0; i < text.length; i++) {
-        var char = text[i].toLowerCase();
-        if (alphabet[char]) {
-          gokturkText += alphabet[char];
-        } else {
-          gokturkText += char;
+
+  
+
+
+   let Translate = (text) => {
+   let empty = ""
+    for (let i = 0; i < text.length; i++) {
+      let haveWord = text[i].toLowerCase()
+      if (alphabet[haveWord]) {
+         empty = empty + alphabet[haveWord]
+         console.log(haveWord);
+
+         console.log(alphabet);
         }
+
+      else{
+        empty = empty + haveWord
       }
-      return gokturkText;
     }
+    return empty
+   }
 
-    function convert() {
-      var inputText = document.getElementById("textA").value;
-      var output = document.getElementById("textB");
-      output.innerHTML = convertToGokturk(inputText)
-    }
-
-
+ let convert = () => {
+ let textArea = document.getElementById("textA").value
+ let textAreaB = document.getElementById("textB")
+ textAreaB.innerHTML = Translate(textArea)
+}
 
 
 
