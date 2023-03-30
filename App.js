@@ -1,4 +1,9 @@
-   var alphabet = {
+
+    // Dışarıdan girilen cümleyi alalım
+const inputSentence = prompt("Lütfen bir cümle girin:");
+
+// Kelimelerin değiştirileceği nesneleri tanımlayalım
+const replacementMap = {
     "a": "𐰀",
     "b": "𐰉",
     "c": "𐰲",
@@ -26,68 +31,64 @@
     "u": "𐰆",
     "v": "𐰉",
     "y": "𐰘",
-    "z": "𐰙"
-    };
-    
+    "z": "𐰙",
+    "iç":"𐰱",
+    "ık": "𐰶",
+    "ok": "𐰸",
+    "uk": "𐰸",
+    "ök": "𐰰",
+    "ük": "𐰰",
+    "nç": "𐰨",
+    "ng": "𐰭",
+    "ny": "𐰪",
+    "nd": "1",
+    "ld": "𐰡"
+};
 
+// Yeni cümleyi oluşturmak için kullanacağımız değişkeni tanımlayalım
+let outputSentence = "";
 
+// Cümleyi boşluk karakterine göre ayıralım
+const wordsInSentence = inputSentence.split(" ");
+
+// Her kelimeyi tek tek kontrol edelim ve değiştirelim
+for (let i = 0; i < wordsInSentence.length; i++) {
+  let currentWord = wordsInSentence[i];
   
+  // Kelimenin yerine hangi kelimeyi yazacağımızı belirleyelim
+  let replacementWord = replacementMap[currentWord];
 
+  // Kelime, değiştirilecek bir kelime değilse, içinde geçtiği kelimeyi kontrol edelim
+  if (replacementWord === undefined) {
+    for (let j = 0; j < Object.keys(replacementMap).length; j++) {
+      const keyword = Object.keys(replacementMap)[j];
 
-   let Translate = (text) => {
-   let empty = ""
-    for (let i = 0; i < text.length; i++) {
-      let haveWord = text[i].toLowerCase()
-      if (alphabet[haveWord]) {
-         empty = empty + alphabet[haveWord]
-         console.log(haveWord);
-
-         console.log(alphabet);
-        }
-
-      else{
-        empty = empty + haveWord
+      // Kelime içinde geçen bir kelimeyi değiştirme map'inde bulursak, yerine yazacağı kelimeyi belirleyelim
+      if (currentWord.includes(keyword)) {
+        currentWord = currentWord.replaceAll(keyword, replacementMap[keyword]);
       }
     }
-    return empty
-   }
+  } else {
+    // Eğer kelime değiştirilecek bir kelime ise, yeni kelimeyle değiştirelim
+    outputSentence += replacementWord;
+  }
+
+  // Değiştirilmiş kelimeyi yeni cümleye ekleyelim
+  outputSentence += currentWord;
+
+  // Eğer son kelime değilse, bir boşluk ekleyelim
+  if (i !== wordsInSentence.length - 1) {
+    outputSentence += " ";
+  }
+}
+
+// Sonucu ekrana yazdıralım
+console.log(outputSentence);
+
+
 
  let convert = () => {
  let textArea = document.getElementById("textA").value
  let textAreaB = document.getElementById("textB")
  textAreaB.innerHTML = Translate(textArea)
 }
-
-
-
-/*
-var alphabetMap = {
-  "a": "𐰀",
-  "b": "𐰋",
-  "c": "𐰲",
-  "d": "𐰓",
-  "e": "𐰀",
-  "f": "𐰯",
-  "g": "𐰏",
-  "h": "𐰚",
-  "i": "𐰃",
-  "j": "𐰲",
-  "k": "𐰚",
-  "l": "𐰠",
-  "m": "𐰢",
-  "n": "𐰤",
-  "o": "𐰆",
-  "p": "𐰏",
-  "q": "𐰐",
-  "r": "𐰑",
-  "s": "𐰒",
-  "t": "𐰓",
-  "u": "𐰔",
-  "v": "𐰕",
-  "w": "𐰖",
-  "x": "𐰗",
-  "y": "𐰘",
-  "z": "𐰙",
-};
-
-*/
