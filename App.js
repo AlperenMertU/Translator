@@ -52,9 +52,21 @@ let convert = () => {
   // transltae edilmiş cümleye aktarmak iiçn değişkenimiz
   let outputSentence = "";
 
-  // cümlemizdeki her kelimeyi ayıralım
-  const wordsInSentence = inputSentence.split(" ");
-  console.log(wordsInSentence);
+  //
+    let newWord = "";
+
+    for (let i = 0; i < inputSentence.length; i++) {
+      if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a") {
+        continue;
+      }
+      newWord += inputSentence[i];
+    }
+    console.log(newWord);
+
+
+    // cümlemizdeki her kelimeyi ayıralım
+    const wordsInSentence = newWord.split(" ");
+      console.log(wordsInSentence);
 
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
   for (let i = 0; i < wordsInSentence.length; i++) {
@@ -94,16 +106,9 @@ let convert = () => {
   }
 
   
-  let newWord = "";
 
-  for (let i = 0; i < outputSentence.length; i++) {
-    console.log(outputSentence[0]);
-    if (i !== 0 && i !== outputSentence.length - 1 && outputSentence[i] === "𐰀") {
-      continue;
-    }
-    newWord += outputSentence[i];
-  }
+  
 
-  textB.innerText = newWord
+  textB.innerText = outputSentence
 }
 
