@@ -53,24 +53,27 @@ let convert = () => {
   let outputSentence = "";
 
   //
-    let newWord = "";
+  let newWord = "";
 
-    for (let i = 0; i < inputSentence.length; i++) {
-      if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a") {
-        continue;
-      }
-      newWord += inputSentence[i];
+  for (let i = 0; i < inputSentence.length; i++) {
+    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a" ) {
+      continue;
     }
-    console.log(newWord);
+    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "e" ) {
+      continue;
+    }
+    newWord += inputSentence[i];
+  }
+  console.log(newWord);
 
 
-    // cümlemizdeki her kelimeyi ayıralım
-    const wordsInSentence = newWord.split(" ");
-      console.log(wordsInSentence);
+  // cümlemizdeki her kelimeyi ayıralım
+  const wordsInSentence = newWord.split(" ");
+  console.log(wordsInSentence);
 
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
   for (let i = 0; i < wordsInSentence.length; i++) {
-    
+
     let currentWord = wordsInSentence[i];
 
     let replacementWord = replacementMap[currentWord];
@@ -84,12 +87,12 @@ let convert = () => {
         // girdiğimz kelmenin içinde geçen bir harf veya 2harf varsa ve objemizde bulursak, yerine yazacağı kelimeyi belirleyelim
         if (currentWord.includes(keyword)) {
           //alper de "e" harfi buluunyorsa kelimedeki tüm e harflerinin replacementMap objesindeki e harfi karşılığıyla değiştir
-          currentWord = currentWord.replaceAll(keyword, replacementMap[keyword]);  
+          currentWord = currentWord.replaceAll(keyword, replacementMap[keyword]);
 
-      
-           
+
+
         }
-   
+
       }
     } else {
       // Eğer kelime değiştirilecek bir kelime ise, yeni kelimeyle değiştirelim örn "ok" un karşılığı objede direkt karşılğı olduğu için direkt değişkene ekle
@@ -105,9 +108,9 @@ let convert = () => {
     }
   }
 
-  
 
-  
+
+
 
   textB.innerText = outputSentence
 }
