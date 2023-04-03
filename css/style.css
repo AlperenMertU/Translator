@@ -84,6 +84,7 @@ main .contain #trans {
   cursor: pointer;
 }
 main .contain .section .textA {
+  padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.115);
   padding-left: 25px;
 }
@@ -97,6 +98,7 @@ main .contain .section .textA textarea {
   overflow: hidden;
 }
 main .contain .sectionB .textB {
+  padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.115);
   padding-right: 25px;
 }

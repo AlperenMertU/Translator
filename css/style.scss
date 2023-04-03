@@ -2,16 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: 0;
-    font-family: "Roboto",arial,sans-serif;
+    font-family: "Roboto", arial, sans-serif;
 }
 
+$border-bottom-color: rgba(0, 0, 0, 0.108);
 
-  $border-bottom-color:rgba(0, 0, 0, 0.108);
-
- 
-
-
-.text{
+.text {
     display: flex;
 }
 
@@ -35,7 +31,7 @@ nav {
 .header {
     .elementZ {
         cursor: pointer;
-        color:rgb(25,103,210);
+        color: rgb(25, 103, 210);
         background-color: rgba(141, 141, 141, 0.062);
         display: flex;
         text-align: center;
@@ -43,10 +39,10 @@ nav {
         gap: 10px;
         padding: 22px 0 50px 80px;
         border-bottom: 1px solid $border-bottom-color;
-        .fa-sharp{
-            padding:0 10px 0 5px;
+        .fa-sharp {
+            padding: 0 10px 0 5px;
         }
-        .title { 
+        .title {
             display: flex;
             background-color: rgba(21, 63, 252, 0.137);
             border: 1px solid rgba(0, 0, 0, 0.127);
@@ -58,14 +54,12 @@ nav {
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
-
         }
         .documents {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
-
         }
         .websites {
             display: flex;
@@ -74,11 +68,9 @@ nav {
             padding: 10px;
         }
     }
-   
 }
 
 main {
-    
     display: flex;
     justify-content: center;
 
@@ -91,60 +83,47 @@ main {
         width: 1320px;
         height: 225px;
         background: rgba(255, 255, 255, 0.062);
-        #trans{
+        #trans {
             padding-top: 20px;
             cursor: pointer;
         }
         .section {
+          .lang{
+         
+          }
 
-            .lang {
-                ul{
-                    
-                  
-                }
-              }
-              
-              .textA{
+            .textA {
+                padding-top: 20px;
                 border-top: 1px solid rgba(0, 0, 0, 0.115);
-
                 padding-left: 25px;
-                textarea{
+                textarea {
                     border: 0;
                     outline: 0;
                     width: 518px;
                     height: 74px;
                     resize: none;
-                   font-size: 24px;
-                   overflow: hidden;
-
+                    font-size: 24px;
+                    overflow: hidden;
                 }
             }
-             
-            
-           
         }
 
-
         .sectionB {
-            .langB {
-             
             
-            }
-            .textB{
+            .textB {
+                padding-top: 20px;
                 border-top: 1px solid rgba(0, 0, 0, 0.115);
-
                 padding-right: 25px;
-                textarea{
+                textarea {
                     border: 0;
                     outline: 0;
                     width: 518px;
                     height: 74px;
                     resize: none;
-                  font-size: 24px;
-                  overflow: hidden;
+                    font-size: 24px;
+                    overflow: hidden;
                 }
-               
-              }
+            }
         }
     }
 
@@ -152,16 +131,16 @@ main {
         gap: 22px;
         padding: 20px;
         font-size: 14px;
-        font-family: "Roboto",arial,sans-serif;
+        font-family: "Roboto", arial, sans-serif;
         list-style-type: none;
         text-decoration: none;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
-    li{
+    li {
         cursor: pointer;
-        font-weight:500;
+        font-weight: 500;
         font-size: 16px;
     }
 }
