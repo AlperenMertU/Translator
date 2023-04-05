@@ -5,6 +5,15 @@
     font-family: "Roboto", arial, sans-serif;
 }
 
+.blue {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: underline rgba(78, 155, 255, 0.664) 5px;
+    
+
+}
+
 $border-bottom-color: rgba(0, 0, 0, 0.108);
 
 .text {
@@ -48,24 +57,28 @@ nav {
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
+            gap: 5px;
         }
         .images {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
+            gap: 5px;
         }
         .documents {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
+            gap: 5px;
         }
         .websites {
             display: flex;
             border: 1px solid rgba(0, 0, 0, 0.127);
             border-radius: 5px;
             padding: 10px;
+            gap: 5px;
         }
     }
 }
@@ -88,9 +101,12 @@ main {
             cursor: pointer;
         }
         .section {
-          .lang{
-         
-          }
+            ul {
+
+                li{
+                    cursor:pointer;
+                }
+            }
 
             .textA {
                 padding-top: 20px;
@@ -109,7 +125,6 @@ main {
         }
 
         .sectionB {
-            
             .textB {
                 padding-top: 20px;
                 border-top: 1px solid rgba(0, 0, 0, 0.115);

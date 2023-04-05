@@ -5,6 +5,14 @@
   font-family: "Roboto", arial, sans-serif;
 }
 
+.blue {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  -webkit-text-decoration: underline rgba(78, 155, 255, 0.664) 5px;
+          text-decoration: underline rgba(78, 155, 255, 0.664) 5px;
+}
+
 .text {
   display: flex;
 }
@@ -45,24 +53,28 @@ nav .rightSide {
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
   padding: 10px;
+  gap: 5px;
 }
 .header .elementZ .images {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
   padding: 10px;
+  gap: 5px;
 }
 .header .elementZ .documents {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
   padding: 10px;
+  gap: 5px;
 }
 .header .elementZ .websites {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.127);
   border-radius: 5px;
   padding: 10px;
+  gap: 5px;
 }
 
 main {
@@ -81,6 +93,9 @@ main .contain {
 }
 main .contain #trans {
   padding-top: 20px;
+  cursor: pointer;
+}
+main .contain .section ul li {
   cursor: pointer;
 }
 main .contain .section .textA {

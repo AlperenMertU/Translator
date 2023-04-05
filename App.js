@@ -1,3 +1,21 @@
+const listItems = document.querySelectorAll("#myList li");
+
+
+
+for (var i = 1; i < listItems.length; i++) {
+  listItems[i].addEventListener("click", function() {
+
+    for (var j = 0; j < listItems.length; j++) {
+      $(listItems[j]).removeClass("blue");
+    }
+      $(this).addClass("blue");
+
+  });
+}
+
+
+
+
 let convert = () => {
 
   let textB = document.getElementById('textB')
@@ -47,19 +65,18 @@ let convert = () => {
   };
 
   //latin alfabsiyle text değerimizi alıyoruz
-  let inputSentence = document.getElementById("textA").value
+  let inputSentence = document.getElementById("textA").value.toLowerCase()
 
   // transltae edilmiş cümleye aktarmak iiçn değişkenimiz
   let outputSentence = "";
-
   //
   let newWord = "";
 
   for (let i = 0; i < inputSentence.length; i++) {
-    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a" ) {
+    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a") {
       continue;
     }
-    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "e" ) {
+    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "e") {
       continue;
     }
     newWord += inputSentence[i];
@@ -116,6 +133,6 @@ let convert = () => {
 }
 
 
-textB.addEventListener("keydown", function(e) {
+textB.addEventListener("keydown", function (e) {
   e.preventDefault();
 });

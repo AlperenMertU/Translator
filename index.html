@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/fav.jpg" style="width: 50px; height: 50px;">
 
     <title>Gookturk Translate</title>
 </head>
-
+ <script>
+    
+ </script>
 <body>
 
     <nav>
@@ -51,29 +55,29 @@
         </div>
     </div>
 
-    
+
     <main>
         <div class="contain">
             <div class="section">
-                <div class="lang">
-                    
-                </div>
-                    <ul>
-                        <li>DETECT ALPHABET</li>
-                        <li>CRİLL</li>
-                        <li style="border-bottom: 1px solid rgba(0, 0, 0, 0.115);">LATİN</li>
-                        <li>GOKTURK</li>
-                        <i class="fa fa-chevron-down"></i>
-                    </ul>
-                
+
+                <ul id="myList">
+                    <li>DETECT ALPHABET</li>
+                    <li>CRİLL</li>
+                    <li>LATİN</li>
+                    <li>GOKTURK</li>
+                    <i class="fa fa-chevron-down"></i>
+                </ul>
+
                 <div class="textA">
-                    <textarea id="textA" name="" id="" value="" ></textarea>
+                    <textarea id="textA" name="" id="" value=""></textarea>
                 </div>
                 <div class="botIcons"></div>
             </div>
+
             <div class="change">
                 <i onclick="convert()" id="trans" class="fa fa-exchange" aria-hidden="true"></i>
             </div>
+
             <div class="sectionB">
                 <div class="lang">
                     <ul>
@@ -83,7 +87,8 @@
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </ul>
                     <div class="textB">
-                        <textarea id="textB" name="" id="" cols="30" rows="10" value="" placeholder="𐱃𐰺𐰣𐰽𐰞𐱅𐰃𐰆𐰣"></textarea>
+                        <textarea id="textB" name="" id="" cols="30" rows="10" value=""
+                            placeholder="𐱃𐰺𐰣𐰽𐰞𐱅𐰃𐰆𐰣"></textarea>
                     </div>
                 </div>
             </div>
@@ -92,7 +97,6 @@
 
 
 </body>
-
 
 
 <script src="App.js"></script>
