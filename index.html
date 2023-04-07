@@ -15,8 +15,12 @@
 
     <title>Gookturk Translate</title>
 </head>
- <script>
-    
+ <script type="module">
+
+import SyllableParser from 'https://cdn.skypack.dev/syllable-parser';
+const syllableParser = new SyllableParser("TR");
+console.log(syllableParser.parse("tamam"));
+
  </script>
 <body>
 

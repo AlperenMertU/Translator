@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "syllable-parser": "^1.0.1"
+  }
+}

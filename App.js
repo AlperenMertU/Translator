@@ -1,18 +1,19 @@
+
+
 const listItems = document.querySelectorAll("#myList li");
 
 
 
 for (var i = 1; i < listItems.length; i++) {
-  listItems[i].addEventListener("click", function() {
+  listItems[i].addEventListener("click", function () {
 
     for (var j = 0; j < listItems.length; j++) {
       $(listItems[j]).removeClass("blue");
     }
-      $(this).addClass("blue");
+    $(this).addClass("blue");
 
   });
 }
-
 
 
 
@@ -20,7 +21,55 @@ let convert = () => {
 
   let textB = document.getElementById('textB')
   //latim harflerinin türk harflerindeki karşılğı ve ekstra olmayan ses ve harfleri
+
+  /*
   const replacementMap = {
+    "iç": "𐰱",
+    "ık": "𐰶",
+    "ok": "𐰸",
+    "uk": "𐰸",
+    "ök": "𐰰",
+    "ük": "𐰰",
+    "nç": "𐰨",
+    "ng": "𐰭",
+    "ny": "𐰪",
+    "nd": "1",
+    "ld": "𐰡",
+    "a": "𐰀",
+    "b": "𐰉",
+    "c": "𐰲",
+    "ç": "𐰲",
+    "d": "𐰓",
+    "e": "𐰀",
+    "f": "𐰯",
+    "g": "𐰍",
+    "ğ": "𐰍",
+    "h": "𐰚",
+    "i": "𐰃",
+    "ı": "𐰃",
+    "j": "𐰖",
+    "k": "𐰚",
+    "l": "𐰠",
+    "m": "𐰢",
+    "n": "𐰤",
+    "o": "𐰆",
+    "ö": "𐰇",
+    "p": "𐰯",
+    "r": "𐰼",
+    "s": "𐰾",
+    "ş": "𐱁",
+    "t": "𐱃",
+    "u": "𐰆",
+    "ü": "𐰇",
+    "v": "𐰉",
+    "y": "𐰖",
+    "z": "𐰔",
+
+  };
+*/
+
+  const replacementMap = {
+    //Türk alfabesinde çift sesli harfler de vardır.
     "iç": "𐰱",
     "ık": "𐰶",
     "ok": "𐰸",
@@ -66,32 +115,26 @@ let convert = () => {
 
   //latin alfabsiyle text değerimizi alıyoruz
   let inputSentence = document.getElementById("textA").value.toLowerCase()
-
-  // transltae edilmiş cümleye aktarmak iiçn değişkenimiz
   let outputSentence = "";
-  //
-  let newWord = "";
+  let newWord = inputSentence.split(" ")
 
-  for (let i = 0; i < inputSentence.length; i++) {
-    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "a") {
-      continue;
-    }
-    if (i !== 0 && i !== inputSentence.length - 1 && inputSentence[i] === "e") {
-      continue;
-    }
-    newWord += inputSentence[i];
-  }
-  console.log(newWord);
+  let yeniKelimeler = newWord.map(function (kelime) {
+    let ilkHarf = kelime.charAt(0);
+    let sonHarf = kelime.charAt(kelime.length - 1);
+    let ortadakiHarfler = kelime.slice(1, kelime.length - 1).replace(/a/g, '').replace(/e/g, '')
+
+    return ilkHarf + ortadakiHarfler + sonHarf;
+
+  });
+
+  console.log(yeniKelimeler);
 
 
-  // cümlemizdeki her kelimeyi ayıralım
-  const wordsInSentence = newWord.split(" ");
-  console.log(wordsInSentence);
 
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
-  for (let i = 0; i < wordsInSentence.length; i++) {
+  for (let i = 0; i < yeniKelimeler.length; i++) {
 
-    let currentWord = wordsInSentence[i];
+    let currentWord = yeniKelimeler[i];
 
     let replacementWord = replacementMap[currentWord];
 
@@ -120,7 +163,7 @@ let convert = () => {
     outputSentence += currentWord;
 
     // Eğer son kelime değilse, bir boşluk ekleyelim
-    if (i !== wordsInSentence.length - 1) {
+    if (i !== yeniKelimeler.length - 1) {
       outputSentence += " ";
     }
   }
