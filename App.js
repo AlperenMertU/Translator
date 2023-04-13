@@ -1,6 +1,5 @@
-
-
 const listItems = document.querySelectorAll("#myList li");
+
 
 
 
@@ -20,53 +19,7 @@ for (var i = 1; i < listItems.length; i++) {
 let convert = () => {
 
   let textB = document.getElementById('textB')
-  //latim harflerinin türk harflerindeki karşılğı ve ekstra olmayan ses ve harfleri
-
-  /*
-  const replacementMap = {
-    "iç": "𐰱",
-    "ık": "𐰶",
-    "ok": "𐰸",
-    "uk": "𐰸",
-    "ök": "𐰰",
-    "ük": "𐰰",
-    "nç": "𐰨",
-    "ng": "𐰭",
-    "ny": "𐰪",
-    "nd": "1",
-    "ld": "𐰡",
-    "a": "𐰀",
-    "b": "𐰉",
-    "c": "𐰲",
-    "ç": "𐰲",
-    "d": "𐰓",
-    "e": "𐰀",
-    "f": "𐰯",
-    "g": "𐰍",
-    "ğ": "𐰍",
-    "h": "𐰚",
-    "i": "𐰃",
-    "ı": "𐰃",
-    "j": "𐰖",
-    "k": "𐰚",
-    "l": "𐰠",
-    "m": "𐰢",
-    "n": "𐰤",
-    "o": "𐰆",
-    "ö": "𐰇",
-    "p": "𐰯",
-    "r": "𐰼",
-    "s": "𐰾",
-    "ş": "𐱁",
-    "t": "𐱃",
-    "u": "𐰆",
-    "ü": "𐰇",
-    "v": "𐰉",
-    "y": "𐰖",
-    "z": "𐰔",
-
-  };
-*/
+  
 
   const replacementMap = {
     //Türk alfabesinde çift sesli harfler de vardır.
@@ -114,7 +67,7 @@ let convert = () => {
   };
 
   //latin alfabsiyle text değerimizi alıyoruz
-  let inputSentence = document.getElementById("textA").value.toLowerCase()
+  let inputSentence = document.getElementById("textA").value.toLowerCase().toString()
   let outputSentence = "";
   let newWord = inputSentence.split(" ")
 
@@ -127,8 +80,11 @@ let convert = () => {
 
   });
 
-  console.log(yeniKelimeler);
 
+
+
+  
+  console.log(yeniKelimeler);
 
 
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
