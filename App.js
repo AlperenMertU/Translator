@@ -1,8 +1,4 @@
 const listItems = document.querySelectorAll("#myList li");
-
-
-
-
 for (var i = 1; i < listItems.length; i++) {
   listItems[i].addEventListener("click", function () {
 
@@ -15,13 +11,10 @@ for (var i = 1; i < listItems.length; i++) {
 }
 
 
-
 let convert = () => {
 
   let textB = document.getElementById('textB')
 
-  const kalin = ["a", "ı", "o", "u"]
-  const ince = ["e", "i", "ö", "ü"]
 
   const replacementMap = {
     //Türk alfabesinde çift sesli harfler de vardır.
@@ -63,7 +56,7 @@ let convert = () => {
     "dö": "𐰓𐰇",
     "du": "𐰑𐰆",
     "dü": "𐰓𐰇",
-    
+
     "ga": "𐰍𐰀",
     "ge": "𐰏𐰀",
     "gı": "𐰍𐰃",
@@ -72,7 +65,7 @@ let convert = () => {
     "gö": "𐰏𐰇",
     "gu": "𐰍𐰆",
     "gü": "𐰏𐰇",
-    
+
     "la": "𐰞𐰀",
     "le": "𐰠𐰀",
     "lı": "𐰞𐰃",
@@ -81,7 +74,7 @@ let convert = () => {
     "lö": "𐰠𐰇",
     "lu": "𐰞𐰆",
     "lü": "𐰠𐰇",
-    
+
     "na": "𐰣𐰀",
     "ne": "𐰤𐰀",
     "nı": "𐰣𐰃",
@@ -118,13 +111,13 @@ let convert = () => {
     "tu": "𐱃𐰆",
     "tü": "𐱅𐰇",
 
-    "ya": "𐰖𐰀 ",
+    "ya": "𐰖𐰀",
     "ye": "𐰘𐰀",
     "yı": "𐰖𐰃",
-    "yi": "𐰘𐰃 ",
-    "yo": "𐰖𐰆 ",
+    "yi": "𐰘𐰃",
+    "yo": "𐰖𐰆",
     "yö": "𐰘𐰇",
-    "yu": "𐰖𐰆 ",
+    "yu": "𐰖𐰆",
     "yü": "𐰘𐰇",
 
     "a": "𐰀",
@@ -156,36 +149,45 @@ let convert = () => {
     "v": "𐰉",
     "y": "𐰖",
     "z": "𐰔",
-
+    "da": "𐰑𐰀",
+    "de": "𐰓𐰀",
+    "dı": "𐰑𐰃",
+    "di": "𐰓𐰃",
+    "do": "𐰑𐰆",
+    "dö": "𐰓𐰇",
+    "du": "𐰑𐰆",
+    "dü": "𐰓𐰇",
   };
+
+  /*
+   burası yüzünden yukarıda verdiğimiz ince kalın ünlü harf şekilleri çalışmıyordu çünkü a harfleri siiliniyordu bu  a harf silme kontrolünü sonra yapalım
+   let yeniKelimeler = newWord.map(function (kelime) {
+    let ilkHarf = kelime.charAt(0);
+    let sonHarf = kelime.charAt(kelime.length - 1);
+    let ortadakiHarfler = kelime.slice(1, kelime.length - 1).replace(/a/g, '').replace(/e/g, '')
+    return ilkHarf + ortadakiHarfler + sonHarf;
+  });
+*/
+
 
 
   let inputSentence = document.getElementById("textA").value.toLowerCase().toString()
   let outputSentence = "";
   let newWord = inputSentence.split(" ")
 
-
-  /*
-   burası yüzünden yukarıda verdiğimiz ince kalın ünlü harf şekilleri çalışmıyordu çünkü a harfleri siiliniyordu bu  a harf silme kontrolünü sonra yapalım
-  let yeniKelimeler = newWord.map(function (kelime) {
-    let ilkHarf = kelime.charAt(0);
-    let sonHarf = kelime.charAt(kelime.length - 1);
-    let ortadakiHarfler = kelime.slice(1, kelime.length - 1).replace(/a/g, '').replace(/e/g, '')
- 
-    return ilkHarf + ortadakiHarfler + sonHarf;
- 
-  });
-*/
-
-
-
-
-
+ console.log(newWord);
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
   for (let i = 0; i < newWord.length; i++) {
 
-    let currentWord = newWord[i];
+    if (i !== newWord.at(-1)) {
+      outputSentence += " ";
+    }
 
+    let currentWord = newWord[i];
+    console.log(currentWord);
+ //buraya kadar sıkıntı yok görünüyor her şey istediğim şekilde 
+  
+    //her i indexini yani her harfi, harfin karşılığı varsa replaceworde ekle 
     let replacementWord = replacementMap[currentWord];
 
     // objemizde girdiğimiz kelime karşılığı yoksa, içinde geçtiği objedeki diğer elamanları kontrol edelim
@@ -193,14 +195,11 @@ let convert = () => {
       for (let j = 0; j < Object.keys(replacementMap).length; j++) {
         //objedeki herelemanı deişkene aktar
         const keyword = Object.keys(replacementMap)[j];
-
+         console.log(keyword);
         // girdiğimz kelmenin içinde geçen bir harf veya 2 harf varsa ve objemizde bulursak, yerine yazacağı kelimeyi belirleyelim
         if (currentWord.includes(keyword)) {
           //alper de "e" harfi buluunyorsa kelimedeki tüm e harflerinin replacementMap objesindeki e harfi karşılığıyla değiştir
           currentWord = currentWord.replaceAll(keyword, replacementMap[keyword]);
-
-
-
         }
 
       }
@@ -212,18 +211,16 @@ let convert = () => {
     // Değiştirilmiş kelimeyi yeni cümleye ekleyelim
     outputSentence += currentWord;
 
-    // Eğer son kelime değilse, bir boşluk ekleyelim
-    if (i !== newWord.length - 1) {
-      outputSentence += " ";
-    }
+     //boşluk ekleme sorun çıkartıyor olabilir 
+    
+    
   }
-
-
-
-
 
   textB.innerText = outputSentence
 }
+
+
+
 
 
 textB.addEventListener("keydown", function (e) {
