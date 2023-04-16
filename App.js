@@ -1,20 +1,6 @@
-const listItems = document.querySelectorAll("#myList li");
-for (var i = 1; i < listItems.length; i++) {
-  listItems[i].addEventListener("click", function () {
-
-    for (var j = 0; j < listItems.length; j++) {
-      $(listItems[j]).removeClass("blue");
-    }
-    $(this).addClass("blue");
-
-  });
-}
-
-
 let convert = () => {
 
   let textB = document.getElementById('textB')
-
 
   const replacementMap = {
     //Türk alfabesinde çift sesli harfler de vardır.
@@ -27,7 +13,7 @@ let convert = () => {
     "nç": "𐰨",
     "ng": "𐰭",
     "ny": "𐰪",
-    "nd": "1",
+    "nd": "𐰦",
     "ld": "𐰡",
 
     "ka": "𐰴𐰀",
@@ -159,23 +145,24 @@ let convert = () => {
     "dü": "𐰓𐰇",
   };
 
-  /*
-   burası yüzünden yukarıda verdiğimiz ince kalın ünlü harf şekilleri çalışmıyordu çünkü a harfleri siiliniyordu bu  a harf silme kontrolünü sonra yapalım
-   let yeniKelimeler = newWord.map(function (kelime) {
-    let ilkHarf = kelime.charAt(0);
-    let sonHarf = kelime.charAt(kelime.length - 1);
-    let ortadakiHarfler = kelime.slice(1, kelime.length - 1).replace(/a/g, '').replace(/e/g, '')
-    return ilkHarf + ortadakiHarfler + sonHarf;
-  });
-*/
-
-
-
   let inputSentence = document.getElementById("textA").value.toLowerCase().toString()
   let outputSentence = "";
+
   let newWord = inputSentence.split(" ")
 
- console.log(newWord);
+
+
+
+  function tersCevir(metin) {
+    return metin.reverse().join('');
+  }
+  
+  // Örnek kullanım:
+  console.log(tersCevir(newWord)); // "!aynüd abahreM"
+  
+
+
+
   // Her kelimeyi tek tek kontrol edelim ve değiştirelim
   for (let i = 0; i < newWord.length; i++) {
 
@@ -184,44 +171,19 @@ let convert = () => {
     }
 
     let currentWord = newWord[i];
-    console.log(currentWord);
- //buraya kadar sıkıntı yok görünüyor her şey istediğim şekilde 
-  
-    //her i indexini yani her harfi, harfin karşılığı varsa replaceworde ekle 
-    let replacementWord = replacementMap[currentWord];
 
-    // objemizde girdiğimiz kelime karşılığı yoksa, içinde geçtiği objedeki diğer elamanları kontrol edelim
-    if (replacementWord === undefined) {
-      for (let j = 0; j < Object.keys(replacementMap).length; j++) {
-        //objedeki herelemanı deişkene aktar
-        const keyword = Object.keys(replacementMap)[j];
-         console.log(keyword);
-        // girdiğimz kelmenin içinde geçen bir harf veya 2 harf varsa ve objemizde bulursak, yerine yazacağı kelimeyi belirleyelim
-        if (currentWord.includes(keyword)) {
-          //alper de "e" harfi buluunyorsa kelimedeki tüm e harflerinin replacementMap objesindeki e harfi karşılığıyla değiştir
-          currentWord = currentWord.replaceAll(keyword, replacementMap[keyword]);
-        }
-
+    // Kelimeyi tek tek kontrol edelim ve değiştirme haritalarını kullanarak değiştirelim
+    Object.keys(replacementMap).forEach(key => {
+      if (currentWord.includes(key)) {
+        currentWord = currentWord.replace(new RegExp(key, 'g'), replacementMap[key]);
       }
-    } else {
-      // Eğer kelime değiştirilecek bir kelime ise, yeni kelimeyle değiştirelim örn "ok" un karşılığı objede direkt karşılğı olduğu için direkt değişkene ekle
-      outputSentence = outputSentence + replacementWord;
-    }
+    })
 
     // Değiştirilmiş kelimeyi yeni cümleye ekleyelim
     outputSentence += currentWord;
-
-     //boşluk ekleme sorun çıkartıyor olabilir 
-    
-    
   }
-
   textB.innerText = outputSentence
 }
-
-
-
-
 
 textB.addEventListener("keydown", function (e) {
   e.preventDefault();
