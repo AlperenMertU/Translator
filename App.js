@@ -150,38 +150,30 @@ let convert = () => {
 
   let newWord = inputSentence.split(" ")
 
-
-
-
-  function tersCevir(metin) {
-    return metin.reverse().join('');
-  }
-  
-  // Örnek kullanım:
-  console.log(tersCevir(newWord)); // "!aynüd abahreM"
-  
-
-
-
-  // Her kelimeyi tek tek kontrol edelim ve değiştirelim
   for (let i = 0; i < newWord.length; i++) {
 
-    if (i !== newWord.at(-1)) {
-      outputSentence += " ";
-    }
+    
 
     let currentWord = newWord[i];
 
-    // Kelimeyi tek tek kontrol edelim ve değiştirme haritalarını kullanarak değiştirelim
     Object.keys(replacementMap).forEach(key => {
       if (currentWord.includes(key)) {
         currentWord = currentWord.replace(new RegExp(key, 'g'), replacementMap[key]);
       }
     })
 
-    // Değiştirilmiş kelimeyi yeni cümleye ekleyelim
+
+
+
+    
+if (i !== newWord.at(-1)) {
+      outputSentence = outputSentence + " ";
+    }
+
     outputSentence += currentWord;
   }
+
+  
   textB.innerText = outputSentence
 }
 
