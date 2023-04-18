@@ -4,6 +4,7 @@ let convert = () => {
 
   const replacementMap = {
     //Türk alfabesinde çift sesli harfler de vardır.
+
     "iç": "𐰱",
     "ık": "𐰶",
     "ok": "𐰸",
@@ -122,7 +123,7 @@ let convert = () => {
     "k": "𐰚",
     "l": "𐰠",
     "m": "𐰢",
-    "n": "𐰤",
+    "n": "𐰣",
     "o": "𐰆",
     "ö": "𐰇",
     "p": "𐰯",
@@ -147,14 +148,28 @@ let convert = () => {
 
   let inputSentence = document.getElementById("textA").value.toLowerCase().toString()
   let outputSentence = "";
-
   let newWord = inputSentence.split(" ")
+
+
 
   for (let i = 0; i < newWord.length; i++) {
 
-    
-
+    let tamam = ""
     let currentWord = newWord[i];
+  
+    //kelime ortasındaki ae harfi silme işlemi (yarım)
+    for (let i = 0; i < currentWord.length; i++) {
+      if (i !== 0 && i !== currentWord.length - 1 && currentWord[i] === "a") {
+        continue
+      }
+      if (i !== 0 && i !== currentWord.length - 1 && currentWord[i] === "e") {
+        continue
+      }
+      tamam += currentWord[i];
+      console.log(tamam);
+    }
+    console.log(tamam);
+  //
 
     Object.keys(replacementMap).forEach(key => {
       if (currentWord.includes(key)) {
@@ -162,18 +177,14 @@ let convert = () => {
       }
     })
 
-
-
-
-    
-if (i !== newWord.at(-1)) {
+    if (i !== newWord.at(-1)) {
       outputSentence = outputSentence + " ";
     }
 
     outputSentence += currentWord;
   }
 
-  
+
   textB.innerText = outputSentence
 }
 
